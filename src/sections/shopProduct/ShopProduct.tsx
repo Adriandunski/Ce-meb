@@ -1,8 +1,9 @@
 import ContainerWeb from "@/components/ContainerWeb";
 import ProductList from "@/sections/shopProduct/ProductList";
+
 export default function ShopProduct() {
 
-    return(
+    return (
         <ContainerWeb idStr={'shopProduct'}>
             <div className={'flex flex-col gap-16'}>
                 <div
@@ -12,7 +13,6 @@ export default function ShopProduct() {
                         Asortyment</p>
                 </div>
                 <ProductList categoryProd={'Krzesło'}></ProductList>
-                <ProductList categoryProd={'Sofa'}></ProductList>
             </div>
         </ContainerWeb>
     );
