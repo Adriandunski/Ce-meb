@@ -2,10 +2,16 @@
 import Image from "next/image";
 import Navigation from "@/sections/header/Navigation";
 import useWindowWith from "@/components/useWindowWith";
+import {useProductContext} from "@/components/ProductContextApp";
 
 export default function MainHeader() {
     const telScreen = useWindowWith(1024);
 
+    const { setFavorite } = useProductContext();
+
+    function handle() {
+        setFavorite(['s']);
+    }
 
     return (
         <header className={'sticky top-0 xl:px-32 px-10 py-5 bg-white border-b-2 border-gold z-10'}>
@@ -14,7 +20,7 @@ export default function MainHeader() {
                     <Image src={'/logo.jpg'} alt={'Logo Ce-Meb'} width={160} height={60}></Image>
                     {telScreen && <Navigation></Navigation>}
                 </div>
-                <div className={'flex lg:basis-auto basis-1/3 justify-center items-center'}>
+                <div onClick={handle} className={'flex lg:basis-auto basis-1/3 justify-center items-center'}>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5"
                          stroke="currentColor" className="w-9 h-9">
                         <path strokeLinecap="round" strokeLinejoin="round"

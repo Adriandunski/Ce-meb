@@ -1,6 +1,11 @@
+'use client'
+
 import Image from "next/image";
 
+
 export default function Footer() {
+
+
     return(
         <footer id={'footer'} className={'bg-[#171B26] text-white pt-12 pb-10 xl:px-32 lg:px-28 px-10 space-y-10'}>
             <div className={'flex md:flex-row flex-col justify-between xl:gap-24 lg:gap-20 md:gap-2 gap-10'}>

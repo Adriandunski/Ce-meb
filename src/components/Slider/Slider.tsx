@@ -24,7 +24,6 @@ export default function Slider({children}: { children: any[] }) {
     }, [indexSlide]);
 
     function checking() {
-        console.log(`Slide: ${indexSlide}`);
         if (indexSlide === children.length - 2) {
             console.log('dodaj')
         }

@@ -4,6 +4,7 @@ import "./globals.css";
 import MainHeader from "@/sections/header/MainHeader";
 import TopFooter from "@/sections/header/TopFooter";
 import Footer from "@/sections/footer/Footer";
+import ProductContextApp from "@/components/ProductContextApp";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,13 +18,16 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en">
       <body className={inter.className}>
-      <TopFooter></TopFooter>
-      <MainHeader></MainHeader>
-      {children}
-      <Footer></Footer>
+      <ProductContextApp>
+          <TopFooter></TopFooter>
+          <MainHeader></MainHeader>
+          {children}
+          <Footer></Footer>
+      </ProductContextApp>
       </body>
     </html>
   );
