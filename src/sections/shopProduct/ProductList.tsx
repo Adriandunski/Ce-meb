@@ -1,8 +1,8 @@
-import CardProduct from "@/sections/shopProduct/CardProduct";
+import CardProduct from "@/sections/shopProduct/CardProduct/CardProduct";
 import Carosuel from "@/components/Carosuel/Carosuel";
 import {Product} from "@/utils/product/products";
 import {Suspense} from "react";
-import LoadingCardProduct from "@/sections/shopProduct/LoadingCardProduct";
+import LoadingCardProduct from "@/sections/shopProduct/CardProduct/LoadingCardProduct";
 
 export default async function ProductList({categoryProd} : {categoryProd: string}) {
     const sizes = [{width: 2500, slides: 5, withOfCard: 288},
