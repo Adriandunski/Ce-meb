@@ -1,6 +1,5 @@
 'use client'
 import {useProductContext} from "@/components/ProductContextApp";
-import {useEffect} from "react";
 
 export default function HeartButtonProductCard({productId} : {productId: number}) {
     const {favorite, addFavorite, deleteFavorite} : {favorite: number[], addFavorite: any, deleteFavorite: any} = useProductContext();

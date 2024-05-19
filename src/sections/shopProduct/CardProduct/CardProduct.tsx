@@ -22,7 +22,7 @@ export default async function CardProduct({product}: { product: Product }) {
 }
 
 async function getProductById(query: number) {
-    const res = await fetch(`http://localhost:3000/products/getProductById?category=${query}`, {cache: 'no-cache'});
+    const res = await fetch(`http://localhost:3000/products/getProductById?id=${query}`, {cache: 'no-cache'});
     const dataJson: Product = await res.json();
 
     return dataJson;
