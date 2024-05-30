@@ -13,6 +13,7 @@ export default function ShopProduct() {
                         Asortyment</p>
                 </div>
                 <ProductList categoryProd={'Krzesło'}></ProductList>
+                <ProductList categoryProd={'Sofa'}></ProductList>
             </div>
         </ContainerWeb>
     );

@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function CarosuelCardStartWeb() {
     return (
         <div className={'flex h-[620px] bg-[#F7F2ED] py-[120px] px-[135px] gap-10'}>

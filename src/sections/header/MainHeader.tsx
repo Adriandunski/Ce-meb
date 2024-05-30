@@ -1,32 +1,29 @@
+'use client'
 
+import InViewApear from "@/components/Animations/InViewApear";
 import Image from "next/image";
+import FavoriteHeartSectionV2 from "@/sections/header/FavoriteSectionV2/FavoriteHeartSectionV2";
+import {useState} from "react";
+import ExtendMenuIcon from "@/sections/header/FavoriteSectionV2/ExtendMenuIcon";
 import Navigation from "@/sections/header/Navigation";
-import useWindowWith from "@/components/useWindowWith";
-import FavoriteHeartSection from "@/sections/header/FavoriteSection/FavoriteHeartSection";
 
 export default function MainHeader() {
-    // const telScreen = useWindowWith(1024);
+    const [open, setOpen] = useState(false);
 
     return (
-        <header className={'sticky top-0 xl:px-32 px-10 py-5 bg-white border-b-2 border-gold z-10'}>
-            <div className={'flex flex-row gap-20 justify-between items-center'}>
-                <div className={'flex basis-1/3 lg:basis-auto flex-row items-center gap-20'}>
-                    <Image src={'/logo.jpg'} alt={'Logo Ce-Meb'} width={160} height={60}></Image>
-                    {/*{telScreen && <Navigation></Navigation>}*/}
-                    <Navigation></Navigation>
+        <header className={'sticky top-0 z-20 bg-[#F7F2ED]'}>
+            <InViewApear directory={'t'}>
+                <div className={'flex flex-row bg-white border-b-2 border-gold justify-between lg:px-20 px-5 relative'}>
+                    <div className={'flex flex-row gap-10 basis-1/3 lg:basis-auto shrink-0'}>
+                        <div className={'w-[170px] relative'}>
+                            <Image src={'/logo.jpg'} alt={'Logo Ce-Meb'} fill={true} objectFit={'contain'}/>
+                        </div>
+                        <Navigation open={open} setOpen={setOpen}/>
+                    </div>
+                    <FavoriteHeartSectionV2/>
+                    <ExtendMenuIcon open={open} setOpen={setOpen}/>
                 </div>
-               <FavoriteHeartSection></FavoriteHeartSection>
-                {/*{!telScreen &&*/}
-                {/*    <div className={'basis-1/3 lg:basis-auto flex justify-end'}>*/}
-                {/*        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5"*/}
-                {/*             stroke="currentColor" className="w-9 h-9">*/}
-                {/*            <path strokeLinecap="round" strokeLinejoin="round"*/}
-                {/*                  d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5"/>*/}
-                {/*        </svg>*/}
-                {/*    </div>*/}
-                {/*}*/}
-            </div>
-
+            </InViewApear>
         </header>
     );
 }

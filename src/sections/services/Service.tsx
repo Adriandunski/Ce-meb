@@ -1,41 +1,55 @@
 import ContainerWeb from "@/components/ContainerWeb";
 import Image from "next/image";
+import InViewApear from "@/components/Animations/InViewApear";
 
 export default function Service() {
     return (
         <ContainerWeb idStr={'services'} className={'bg-neutral-100'}>
             <div className={'flex flex-col gap-16'}>
                 <div className={'flex flex-col gap-10 items-center justify-center'}>
-                    <div className={'flex flex-col items-center justify-center'}>
-                        <h2 className={'text-red-600 font-medium'}>Oferta</h2>
-                        <p className={'text-5xl font-Jost font-bold'}>Odkryj Nasze <span
-                            className={'text-gold'}>Usługi</span>
-                        </p>
-                    </div>
+                    <InViewApear directory={'b'} offset={250}>
+                        <div className={'flex flex-col items-center justify-center'}>
+                            <h2 className={'text-red-600 font-medium'}>Oferta</h2>
+                            <p className={'text-5xl font-Jost font-bold'}>Odkryj Nasze <span
+                                className={'text-gold'}>Usługi</span>
+                            </p>
+                        </div>
+                    </InViewApear>
                 </div>
                 <div className={'flex gap-10 lg:flex-row-reverse flex-col-reverse'}>
                     <div className={'basis-1/2 flex justify-center items-center'}>
                         <div className={'flex gap-10'}>
-                            <div className={'basis-1/2 relative rounded-lg overflow-hidden'}>
-                                <Image
-                                       src={'/renowacje/mebelPrzed-01.jpg'}
-                                       alt={'usługa tapicerstwo'}
-                                       width={350} height={350}></Image>
-                                <div className={'absolute w-full bg-red-400 bottom-0 py-2 flex justify-center'}>
-                                    <span className={'text-white font-AdventPro text-2xl font-semibold tracking-widest'}>PRZED</span>
-                                </div>
+                            <div className={'basis-1/2'}>
+                                <InViewApear directory={'r'} offset={150}>
+                                    <div className={'relative rounded-lg overflow-hidden'}>
+                                        <Image
+                                            src={'/renowacje/mebelPrzed-01.jpg'}
+                                            alt={'usługa tapicerstwo'}
+                                            width={350} height={350}></Image>
+                                        <div className={'absolute w-full bg-red-400 bottom-0 py-2 flex justify-center'}>
+                                    <span
+                                        className={'text-white font-AdventPro text-2xl font-semibold tracking-widest'}>PRZED</span>
+                                        </div>
+                                    </div>
+                                </InViewApear>
                             </div>
-                            <div className={'basis-1/2 relative rounded-lg overflow-hidden'}>
-                                <Image
-                                       src={'/renowacje/mebelPo-01.jpg'}
-                                       alt={'usługa tapicerstwo'}
-                                       width={350} height={350}>
 
-                                </Image>
-                                <div className={'absolute w-full bg-green-300 bottom-0 py-2 flex justify-center'}>
+                            <div className={'basis-1/2 '}>
+                                <InViewApear directory={'r'} offset={150} delay={0.5}>
+                                    <div className={'relative rounded-lg overflow-hidden'}>
+                                        <Image
+                                            src={'/renowacje/mebelPo-01.jpg'}
+                                            alt={'usługa tapicerstwo'}
+                                            width={350} height={350}>
+
+                                        </Image>
+                                        <div
+                                            className={'absolute w-full bg-green-300 bottom-0 py-2 flex justify-center'}>
                                     <span
                                         className={'text-white font-AdventPro text-2xl font-semibold tracking-widest'}>PO</span>
-                                </div>
+                                        </div>
+                                    </div>
+                                </InViewApear>
                             </div>
                         </div>
                     </div>

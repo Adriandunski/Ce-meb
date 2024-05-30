@@ -10,8 +10,8 @@ export default function Home() {
     return (
         <main className="">
             <StartWeb></StartWeb>
-            <Service></Service>
             <AboutUs></AboutUs>
+            <Service></Service>
             <ShopProduct></ShopProduct>
             <Opinions></Opinions>
             <ContactUs></ContactUs>

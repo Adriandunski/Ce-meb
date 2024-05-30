@@ -1,4 +1,4 @@
-import CardProduct from "@/sections/shopProduct/CardProduct/CardProduct";
+import CardProductS from "@/sections/shopProduct/CardProduct/CardProductS";
 import Carosuel from "@/components/Carosuel/Carosuel";
 import {Product} from "@/utils/product/products";
 import {Suspense} from "react";
@@ -20,7 +20,7 @@ export default async function ProductList({categoryProd} : {categoryProd: string
                 <Carosuel breaks={sizes}>
                     {product.map((value, index) =>
                         <Suspense key={index} fallback={<LoadingCardProduct></LoadingCardProduct>}>
-                            <CardProduct product={value} ></CardProduct>
+                            <CardProductS product={value} ></CardProductS>
                         </Suspense>
                     )}
                 </Carosuel>

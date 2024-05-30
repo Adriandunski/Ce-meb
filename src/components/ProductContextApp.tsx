@@ -41,7 +41,7 @@ function deleteFavoriteProductCookies(productId: number) {
     result.then(() => {console.log('Usunieto cookie')});
 }
 
-async function getAllProducts() {
+export async function getAllProducts() {
     const result = await fetch(`http://localhost:3000/cookies/getAllFavoriteProducts`, {cache: 'no-cache'});
     const dataJson: CookProduct[] =  await result.json();
     const numbers: number[] = dataJson.map(x => x.id);
