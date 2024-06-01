@@ -21,7 +21,7 @@ export default function AboutUs() {
                 <div className={'md:basis-1/2 flex flex-col gap-16'}>
                     <div className={'flex flex-col gap-10 justify-center'}>
                         <div className={'flex flex-col gap-3'}>
-                            <InViewApear directory={'b'} offset={0}>
+                            <InViewApear directory={'b'}>
                                 <>
                                     <h2 className={'text-red-600 font-medium md:text-left text-center'}>O nas</h2>
                                     <p className={'text-5xl font-Jost font-bold md:text-left text-center'}>Zalety
@@ -32,20 +32,28 @@ export default function AboutUs() {
 
 
                             <div className={'flex flex-col gap-5 mt-5'}>
-                                <p className={'font-light text-base text-neutral-600 font-Roboto'}>Jesteśmy małym
-                                    zakładem
-                                    tapicerskim.Zajmujemy się renowacją starych i wysłużonych już mebli tapicerowanych
-                                    nadając
-                                    im nowe życie, tworzymy własne autorskie projekty, jak również realizujemy projekty
-                                    klientów
-                                    indywidualnych i firmowych.</p>
-                                <p className={'font-light text-base text-neutral-600 font-Roboto'}>Jesteśmy małym
-                                    zakładem
-                                    tapicerskim.Zajmujemy się renowacją starych i wysłużonych już mebli tapicerowanych
-                                    nadając
-                                    im nowe życie, tworzymy własne autorskie projekty, jak również realizujemy projekty
-                                    klientów
-                                    indywidualnych i firmowych.</p>
+                                <InViewApear directory={'t'} slideOut={0}>
+                                    <p className={'font-light text-base text-neutral-600 font-Roboto'}>Jesteśmy małym
+                                        zakładem
+                                        tapicerskim.Zajmujemy się renowacją starych i wysłużonych już mebli
+                                        tapicerowanych
+                                        nadając
+                                        im nowe życie, tworzymy własne autorskie projekty, jak również realizujemy
+                                        projekty
+                                        klientów
+                                        indywidualnych i firmowych.</p>
+                                </InViewApear>
+                                <InViewApear directory={'t'} slideOut={0}>
+                                    <p className={'font-light text-base text-neutral-600 font-Roboto'}>Jesteśmy małym
+                                        zakładem
+                                        tapicerskim.Zajmujemy się renowacją starych i wysłużonych już mebli
+                                        tapicerowanych
+                                        nadając
+                                        im nowe życie, tworzymy własne autorskie projekty, jak również realizujemy
+                                        projekty
+                                        klientów
+                                        indywidualnych i firmowych.</p>
+                                </InViewApear>
                             </div>
                         </div>
                         <InViewApear directory={'b'} offset={150}>

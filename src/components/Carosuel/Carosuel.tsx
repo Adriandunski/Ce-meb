@@ -6,9 +6,12 @@ import {countDirection, radioButtoSet} from "./CarosuelFunctions";
 import CardCarosuel from "@/components/Carosuel/CardCarosuel";
 import useCarosuelBreaks from "@/components/Carosuel/useCarosuelBreaks";
 
-export default function Carosuel({children, breaks}: {
+export default function Carosuel({children, breaks, gap = 40, showButtons = true, paddingX = 32}: {
     children: any[],
-    breaks: any[]
+    breaks: any[],
+    gap?: number,
+    showButtons?: boolean,
+    paddingX?: number
 }) {
     const [indexSlide, setIndexSlide] = useState(0);
     const [myArray, setMyArray] = useState([1]);
@@ -52,7 +55,7 @@ export default function Carosuel({children, breaks}: {
 
         setMyArray(myArraj);
         makeStepSlide(0);
-    }, [optionsOfCard, children]);
+    }, [optionsOfCard]);
 
     function handleEndDrag(offset: number) {
         const temp = countDirection(offset);
@@ -65,27 +68,27 @@ export default function Carosuel({children, breaks}: {
     }
 
     return (
-        <div className={'flex flex-col justify-center items-center gap-5'}>
-            <div className={'overflow-hidden box-content px-8 relative'}
-                 style={{width: (optionsOfCard.slides * (optionsOfCard.withOfCard + 40)) - 40}}>
-                <motion.div animate={{x: ((indexSlide * (optionsOfCard.withOfCard + 40)) * -1)}}
+        <div className={'flex flex-col justify-center items-center'}>
+            <div className={'overflow-hidden box-content py-14 relative'}
+                 style={{width: (optionsOfCard.slides * (optionsOfCard.withOfCard + gap)) - gap, paddingLeft: paddingX, paddingRight: paddingX}}>
+                <motion.div animate={{x: ((indexSlide * (optionsOfCard.withOfCard + gap)) * -1)}}
                             transition={{duration: 2, type: 'spring'}}
                             drag={'x'}
                             dragConstraints={{
                                 right: 0,
-                                left: ((children.length - optionsOfCard.slides) * (optionsOfCard.withOfCard + 40) * (-1))
+                                left: ((children.length - optionsOfCard.slides) * (optionsOfCard.withOfCard + gap) * (-1))
                             }}
                             dragElastic={0.1}
                             onDragEnd={(e, {offset, velocity}) => {
                                 handleEndDrag(offset.x);
                             }}
-                            className={'inline-flex gap-10'}>
+                            className={'inline-flex'} style={{gap: gap}}>
                     {children.map((value, index) => {
                         return <CardCarosuel widthCard={optionsOfCard.withOfCard} key={index}>{value}</CardCarosuel>
                     })}
                 </motion.div>
 
-                {Math.floor(indexSlide) !== 0 &&
+                {showButtons && Math.floor(indexSlide) !== 0 &&
                     <div
                         className={'left-0 top-1/2 -translate-y-1/2  absolute hover:cursor-pointer w-12 h-12 bg-gold rounded-full p-2'}
                         onClick={() => calculateValueStepSlide(-1)}>
@@ -96,7 +99,7 @@ export default function Carosuel({children, breaks}: {
                         </svg>
                     </div>}
 
-                {indexSlide !== children.length - optionsOfCard.slides && <div
+                {showButtons && indexSlide !== children.length - optionsOfCard.slides && <div
                     className={'right-0 top-1/2 -translate-y-1/2  absolute hover:cursor-pointer w-12 h-12 bg-gold rounded-full p-2'}
                     onClick={() => calculateValueStepSlide(1)}>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2"

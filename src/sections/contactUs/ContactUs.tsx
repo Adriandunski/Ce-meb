@@ -2,6 +2,7 @@ import Formule from "@/sections/contactUs/Formule";
 import TileContact from "@/sections/contactUs/TileContact";
 import Link from "next/link";
 import ContainerWeb from "@/components/ContainerWeb";
+import InViewApear from "@/components/Animations/InViewApear";
 
 export default function ContactUs() {
     return (
@@ -9,14 +10,23 @@ export default function ContactUs() {
             <div className={'flex flex-col gap-16'}>
                 <div
                     className={'flex flex-col gap-y-3 lg:items-start justify-center lg:ml-32 items-center text-center lg:text-left'}>
-                    <h2 className={'text-red-600 font-medium'}>Kontakt</h2>
-                    <p className={'text-5xl font-Jost font-bold'}>Jak <span className={'text-gold'}>Możemy</span> Ci
-                        Pomóc?</p>
+                    <InViewApear directory={'b'}>
+                        <h2 className={'text-red-600 font-medium'}>Kontakt</h2>
+                    </InViewApear>
+                    <InViewApear directory={'b'} delay={0.5}>
+                        <p className={'text-5xl font-Jost font-bold'}>Jak <span className={'text-gold'}>Możemy</span> Ci
+                            Pomóc?</p>
+                    </InViewApear>
                 </div>
                 <div className={'flex lg:flex-row flex-col xl:gap-16 gap-8'}>
-                    <div className={'basis-1/2 bg-[#FFECEC] sm:p-12 p-8 rounded-2xl flex flex-col gap-8'}>
-                        <p className={'font-Jost text-3xl font-semibold'}>Napisz do nas!</p>
-                        <Formule></Formule>
+                    <div className={'basis-1/2 '}>
+                        <InViewApear directory={'l'}>
+                            <div className={'bg-[#FFECEC] flex flex-col sm:p-12 p-8 rounded-2xl  gap-8'}>
+
+                                <p className={'font-Jost text-3xl font-semibold'}>Napisz do nas!</p>
+                                <Formule></Formule>
+                            </div>
+                        </InViewApear>
                     </div>
                     <div className={'basis-1/2 flex flex-col gap-y-8'}>
                         <div className={'flex justify-between gap-3 sm:flex-row flex-col'}>
@@ -57,10 +67,10 @@ export default function ContactUs() {
                             </TileContact>
                         </div>
                         <div className={'flex h-full rounded-2xl overflow-hidden'}>
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2524.2093745279426!2d19.302163076759907!3d50.753151271651625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47174b889c75034f%3A0x80a4da078abc1985!2sCe-Meb%20Zak%C5%82ad%20Tapicerski%2C%20Tapicer%20Cz%C4%99stochowa!5e0!3m2!1sen!2spl!4v1713517149389!5m2!1sen!2spl"
-                                loading="eager"
-                                referrerPolicy="no-referrer-when-downgrade" className={'w-full h-full'}></iframe>
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2524.2093745279426!2d19.302163076759907!3d50.753151271651625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47174b889c75034f%3A0x80a4da078abc1985!2sCe-Meb%20Zak%C5%82ad%20Tapicerski%2C%20Tapicer%20Cz%C4%99stochowa!5e0!3m2!1sen!2spl!4v1713517149389!5m2!1sen!2spl"
+                                    loading="eager"
+                                    referrerPolicy="no-referrer-when-downgrade" className={'w-full h-full'}></iframe>
                         </div>
                     </div>
                 </div>

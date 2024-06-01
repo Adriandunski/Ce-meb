@@ -3,6 +3,7 @@ import {AnimatePresence, motion, useAnimate} from "framer-motion";
 import useWindowWith from "@/components/useWindowWith";
 import {useEffect} from "react";
 import {hidden} from "next/dist/lib/picocolors";
+import Link from "next/link";
 
 export default function Navigation({open, setOpen}: { open: boolean, setOpen: any}) {
 
@@ -31,7 +32,7 @@ export default function Navigation({open, setOpen}: { open: boolean, setOpen: an
 
                     >
                         <div className={'flex flex-row items-center justify-center gap-2'}>
-                            <p>Strona Główna</p>
+                            <Link href={'/'}>Strona Glówna</Link>
                         </div>
                         <div className={'flex flex-row items-center justify-center gap-2'}>
                             <p>Usługi</p>
