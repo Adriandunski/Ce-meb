@@ -14,6 +14,7 @@ export default async function ProductList({categoryProd} : {categoryProd: string
     ];
 
     const product = await getData(categoryProd);
+    console.log(product.length);
 
     return(
         <div className={'flex flex-col gap-16'}>

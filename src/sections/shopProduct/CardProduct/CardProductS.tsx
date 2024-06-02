@@ -1,5 +1,5 @@
 import {Product} from "@/utils/product/products";
-import CardProductClient from "@/sections/shopProduct/CardProductClient";
+import CardProductClient from "@/sections/shopProduct/CardProduct/CardProductClient";
 
 export default async function CardProductS({product}: { product: Product }) {
 

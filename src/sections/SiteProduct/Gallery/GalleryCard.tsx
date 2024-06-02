@@ -1,8 +1,7 @@
 import Image from "next/image";
-import {MouseEventHandler, useRef, useState} from "react";
+import {useRef, useState} from "react";
 
-export default function GalleryCard({fotoId, fotoUrl, switchFoto}: {
-    fotoId: number,
+export default function GalleryCard({fotoUrl, switchFoto}: {
     fotoUrl: string,
     switchFoto: any
 }) {
@@ -37,7 +36,7 @@ export default function GalleryCard({fotoId, fotoUrl, switchFoto}: {
             if (isDragging) {
                 setClick(true);
             } else if (!isDragging) {
-                switchFoto(fotoId);
+                switchFoto(fotoUrl);
             }
             mouseDownRef.current = false;
         }
@@ -48,7 +47,7 @@ export default function GalleryCard({fotoId, fotoUrl, switchFoto}: {
     return (
         <div className={'h-[100px] flex relative border-2 border-neutral-700'} onMouseDown={handleMouseDown} onMouseMove={handleMouseMove} onMouseUp={handleMouseUp}
              >
-            <Image src={`/photoProduct/${fotoUrl}`} alt={'Zdjecie'} fill className={'object-cover'} draggable={false}/>
+            <Image src={fotoUrl} alt={'Zdjecie'} fill className={'object-cover'} draggable={false}/>
         </div>
     );
 }

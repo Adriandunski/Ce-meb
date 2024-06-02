@@ -3,10 +3,10 @@ import ContactUs from "@/sections/contactUs/ContactUs";
 import {Product} from "@/utils/product/products";
 import ShortDescription from "@/sections/SiteProduct/ShortDescription";
 import MeasureProduct from "@/sections/SiteProduct/MeasureProduct/MeasureProduct";
-import Gallery from "@/sections/SiteProduct/Gallery/Gallery";
 import TitleProduct from "@/sections/SiteProduct/TitleProduct";
 import ProductNameAndPrice from "@/sections/SiteProduct/ProductNameAndPrice";
 import InViewApear from "@/components/Animations/InViewApear";
+import GallerySection from "@/sections/SiteProduct/Gallery/GallerySection";
 
 export default async function ProductDescription({params}: { params: { productId: string } }) {
 
@@ -14,10 +14,10 @@ export default async function ProductDescription({params}: { params: { productId
 
     return (
         <div>
-            <ContainerWeb idStr={'top'} className={'mt-5'}>
+            <ContainerWeb idStr={'top'} className={'mt-0 bg-[#F7F2ED]'}>
                 <div className={'flex lg:flex-row flex-col-reverse gap-10'}>
-                    <Gallery productId={productFull.id}/>
-                    <div className={'basis-1/2 flex flex-col'}>
+                    <GallerySection productFull={productFull}/>
+                    <div className={'basis-1/2 shrink-0 flex flex-col pr-5'}>
                         <div className={'flex flex-col gap-10'}>
                             <ProductNameAndPrice productFull={productFull}/>
                             <div className={'flex flex-col gap-5'}>
