@@ -2,7 +2,7 @@ import ContainerWeb from "@/components/ContainerWeb";
 import Image from "next/image";
 import InViewApear from "@/components/Animations/InViewApear";
 import Link from "next/link";
-import ButtonService from "@/sections/services/ButtonService";
+import Button from "@/components/Button";
 
 export default function Service() {
     return (
@@ -80,7 +80,12 @@ export default function Service() {
                         </div>
 
 
-                        <ButtonService/>
+                        <Button>
+                            <Link
+                                className={'bg-green-400 px-6 text-xl tracking-wider font-light py-2 text-white rounded-lg font-Jost'}
+                                href={'renowacje'}>Zobacz więcej!</Link>
+                        </Button>
+
                     </div>
                 </div>
 

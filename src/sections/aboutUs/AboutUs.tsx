@@ -2,11 +2,13 @@ import TileAdvantage from "@/sections/aboutUs/TileAdvantage";
 import ContainerWeb from "@/components/ContainerWeb";
 import Image from "next/image";
 import InViewApear from "@/components/Animations/InViewApear";
+import Button from "@/components/Button";
+import Link from "next/link";
 
 export default function AboutUs() {
     return (
         <ContainerWeb idStr={'aboutUs'}>
-            <div className={'flex flex-col-reverse gap-16 lg:flex-row'}>
+            <div id={'aboutUs2'} className={'flex flex-col-reverse gap-16 lg:flex-row'}>
                 <div
                     className={'md:basis-1/2 relative flex justify-center items-center lg:h-auto h-96 rounded-md overflow-hidden'}>
                     <Image className={'object-cover w-full h-full'}
@@ -80,18 +82,20 @@ export default function AboutUs() {
                     </div>
                     <div>
                         <InViewApear directory={'b'} offset={150}>
+                            <Button>
+                                <Link href={'/#services'}
+                                    className={'py-[16px] px-5 flex gap-3 border-2 border-gold font-Jost font-semibold rounded-md'}>
+                                    Poznaj Usługi
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                         strokeWidth="1.8"
+                                         stroke="currentColor" className="w-6 h-6">
+                                        <path strokeLinecap="round" strokeLinejoin="round"
+                                              d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
+                                    </svg>
 
-                            <button
-                                className={'py-[16px] px-5 flex gap-3 border-2 border-gold font-Jost font-semibold rounded-md'}>
-                                Poznaj Usługi
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                     strokeWidth="1.8"
-                                     stroke="currentColor" className="w-6 h-6">
-                                    <path strokeLinecap="round" strokeLinejoin="round"
-                                          d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
-                                </svg>
+                                </Link>
+                            </Button>
 
-                            </button>
                         </InViewApear>
                     </div>
                 </div>

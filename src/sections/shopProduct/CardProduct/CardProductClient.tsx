@@ -23,7 +23,7 @@ export default function CardProductClient({productFull}: { productFull: any}) {
                 />
                 <HeartSection productId={productFull.id}></HeartSection>
                 <div
-                    className={'absolute hidden group-hover:block bottom-0  w-full'}>
+                    className={'absolute xl:hidden group-hover:block bottom-0  w-full'}>
 
                     <div className={'py-2 flex justify-center bg-gold hover:bg-white hover:border-b-4 hover:border-gold hover:text-gold text-white font-Jost hover:scale-110 hover:cursor-pointer transition-all'} onClick={handleClick}>
                         <p> Zobacz więcej </p>

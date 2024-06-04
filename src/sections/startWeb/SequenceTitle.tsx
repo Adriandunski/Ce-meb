@@ -5,7 +5,7 @@ import {TypeAnimation} from "react-type-animation";
 
 export default function SequenceTitle() {
     return (
-        <div className={'h-56 border-2'}>
+        <div className={'h-56'}>
 
             <TypeAnimation className={'text-7xl font-Jost font-bold text-gold'} cursor={false}
                            style={{whiteSpace: 'pre-line'}}

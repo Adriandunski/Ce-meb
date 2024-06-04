@@ -1,7 +1,9 @@
-export default function OpinionsCard({opinion, stars}: { opinion: string, stars?: number }) {
+import Image from "next/image";
+
+export default function OpinionsCard({opinion, stars}: { opinion: any, stars?: number }) {
 
     return (
-        <div className={'flex flex-col rounded-xl bg-[#F8F8F8] py-9 px-6 gap-12 h-full shadow-2xl'}>
+        <div className={'flex flex-col rounded-xl bg-[#F8F8F8] py-9 px-6 gap-12 h-full shadow-md'}>
             <div className={'flex flex-col justify-between h-full gap-10'}>
                 <div className={'flex flex-col'}>
                     <svg className={'h-8 w-8'} viewBox="0 0 27 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -10,7 +12,7 @@ export default function OpinionsCard({opinion, stars}: { opinion: string, stars?
                             fill="#E51E23"/>
                     </svg>
                     <p className={'text-neutral-700 font-light tracking-wide leading-7'}>
-                        {opinion}
+                        {opinion.opinion}
                     </p>
                 </div>
 
@@ -49,8 +51,10 @@ export default function OpinionsCard({opinion, stars}: { opinion: string, stars?
                     </div>
 
                     <div className={'flex items-center gap-5'}>
-                        <div className={'border-2 rounded-full w-20 h-20'}></div>
-                        <p className={'text-lg text-neutral-700 font-medium tracking-wider'}>Adrian Duński</p>
+                        <div className={'bg-[#99B0A7] rounded-full w-20 h-20 relative'}>
+                            <Image src={opinion.srcPhoto} alt={'opiniaTwarz'} fill objectFit={'cover'}/>
+                        </div>
+                        <p className={'text-lg text-neutral-700 font-medium tracking-wider'}>{opinion.name}</p>
                     </div>
                 </div>
             </div>

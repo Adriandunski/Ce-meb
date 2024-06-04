@@ -6,9 +6,10 @@ export async function GET(request: NextRequest) {
     const query = parseInt(searchParams.get('id') || '0');
 
     const tablicaElementow: Product[] = products.filter(value => value.id === query);
-    // const x = Math.floor(Math.random() * 9)  * 1000;
-    //
-    // await new Promise(resolve => setTimeout(resolve, x));
+
+    if (tablicaElementow.length === 0) {
+        return NextResponse.json({error: 'Internal Server Error'}, {status: 500});
+    }
 
     return NextResponse.json(tablicaElementow[0]);
 }

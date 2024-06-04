@@ -7,6 +7,7 @@ import TitleProduct from "@/sections/SiteProduct/TitleProduct";
 import ProductNameAndPrice from "@/sections/SiteProduct/ProductNameAndPrice";
 import InViewApear from "@/components/Animations/InViewApear";
 import GallerySection from "@/sections/SiteProduct/Gallery/GallerySection";
+import {redirect} from "next/navigation";
 
 export default async function ProductDescription({params}: { params: { productId: string } }) {
 
@@ -45,7 +46,11 @@ export default async function ProductDescription({params}: { params: { productId
 
 async function getProductById(query: number) {
     const res = await fetch(`http://localhost:3000/products/getProductById?id=${query}`, {cache: 'no-cache'});
-    const dataJson: Product = await res.json();
 
-    return dataJson;
+    if (res.ok) {
+        const dataJson: Product = await res.json();
+        return dataJson;
+    } else {
+        redirect('/');
+    }
 }
