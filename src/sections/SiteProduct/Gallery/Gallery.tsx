@@ -6,6 +6,7 @@ import Carosuel from "@/components/Carosuel/Carosuel";
 import GalleryCard from "@/sections/SiteProduct/Gallery/GalleryCard";
 import {Product} from "@/utils/product/products";
 import HeartSection from "@/sections/shopProduct/CardProduct/HeartButtonSection/HeartSection";
+import {StorageReference} from "@firebase/storage";
 
 export default function Gallery({photoNames, productId} : {photoNames: string[], productId: number} ) {
     const sizes = [{width: 2500, slides: 5, withOfCard: 150},
@@ -27,8 +28,8 @@ export default function Gallery({photoNames, productId} : {photoNames: string[],
 
     return (
         <div className={'flex flex-col gap-5 basis-1/2 shrink-0 relative'}>
-            <div className={'bg-neutral-700 h-[500px] relative'}>
-                <Image src={imageName} alt={imageName} fill className={'object-cover'}/>
+            <div className={'bg-white h-[500px] relative'}>
+                <Image src={imageName} alt={imageName} fill className={'object-contain'}/>
             </div>
             <div className={''}>
                 <Carosuel breaks={sizes} gap={20} showButtons={false} paddingX={20}>

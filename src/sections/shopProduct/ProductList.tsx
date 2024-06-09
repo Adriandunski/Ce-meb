@@ -3,6 +3,7 @@ import Carosuel from "@/components/Carosuel/Carosuel";
 import {Product} from "@/utils/product/products";
 import {Suspense} from "react";
 import LoadingCardProduct from "@/sections/shopProduct/CardProduct/LoadingCardProduct";
+import {getProducts} from "@/utils/ProductsRepo";
 
 export default async function ProductList({categoryProd} : {categoryProd: string}) {
     const sizes = [{width: 2500, slides: 5, withOfCard: 288},
@@ -13,13 +14,12 @@ export default async function ProductList({categoryProd} : {categoryProd: string
         {width: 0, slides: 1, withOfCard: 350}
     ];
 
-    const product = await getData(categoryProd);
-    console.log(product.length);
+    const productFirebase = await getProducts();
 
     return(
         <div className={'flex flex-col gap-16'}>
                 <Carosuel breaks={sizes}>
-                    {product.map((value, index) =>
+                    {productFirebase.map((value, index) =>
                         <Suspense key={index} fallback={<LoadingCardProduct></LoadingCardProduct>}>
                             <CardProductS product={value} ></CardProductS>
                         </Suspense>

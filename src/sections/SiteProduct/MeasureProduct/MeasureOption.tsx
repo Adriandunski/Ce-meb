@@ -1,4 +1,4 @@
-export default function MeasureOption({keyString, value} : {keyString:string, value: string}) {
+export default function MeasureOption({keyString, value} : {keyString:string, value: any}) {
     return(
         <div className={'flex flex-row gap-3 w-full justify-between font-AdventPro text-lg border-2 border-neutral-600 px-2 py-1 rounded-sm'}>
             <p>{keyString}</p>

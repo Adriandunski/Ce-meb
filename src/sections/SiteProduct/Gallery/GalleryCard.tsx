@@ -45,9 +45,9 @@ export default function GalleryCard({fotoUrl, switchFoto}: {
 
 
     return (
-        <div className={'h-[100px] flex relative border-2 border-neutral-700'} onMouseDown={handleMouseDown} onMouseMove={handleMouseMove} onMouseUp={handleMouseUp}
+        <div className={'h-[100px] flex relative border-2 border-neutral-700 bg-white'} onMouseDown={handleMouseDown} onMouseMove={handleMouseMove} onMouseUp={handleMouseUp}
              >
-            <Image src={fotoUrl} alt={'Zdjecie'} fill className={'object-cover'} draggable={false}/>
+            <Image src={fotoUrl} alt={'Zdjecie'} fill className={'object-contain'} draggable={false}/>
         </div>
     );
 }

@@ -14,9 +14,9 @@ export default function CardProductClient({productFull}: { productFull: any}) {
 
     return (
         <div className={'flex flex-col shrink-0 gap-3 h-full hover:shadow-2xl group transition-all'}>
-            <div className={'bg-gray-600 shrink-0 h-96 flex relative justify-center items-center overflow-hidden'}>
+            <div className={'bg-white shrink-0 h-96 flex relative justify-center items-center overflow-hidden'}>
                 <Image src={`${productFull.photoSrc}/zdjecie1.jpg`}
-                       className={'object-cover transition-all group-hover:scale-110 duration-700'}
+                       className={'object-contain transition-all group-hover:scale-110 duration-700'}
                        alt={productFull.name}
                        fill
                        draggable={false}

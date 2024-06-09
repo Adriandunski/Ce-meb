@@ -4,16 +4,18 @@ export class Product {
     name: string;
     price: number;
     photoSrc: string;
-    measure: string[][];
+    description: string
+    measure: Record<string, any>;
 
 
-    constructor(id: number, category: string, name: string, price: number, photoSrc: string, measure: string[][]) {
+    constructor(id: number, category: string, name: string, price: number, photoSrc: string, measure: string[][], description: string) {
         this.id = id;
         this.category = category;
         this.price = price;
         this.name = name;
         this.photoSrc = photoSrc;
         this.measure = measure;
+        this.description = description
     }
 }
 

@@ -1,6 +1,7 @@
-import Image from "next/image";
+import PhotoImageOpinions from "@/sections/opinions/PhotoImageOpinions";
 
 export default function OpinionsCard({opinion, stars}: { opinion: any, stars?: number }) {
+
 
     return (
         <div className={'flex flex-col rounded-xl bg-[#F8F8F8] py-9 px-6 gap-12 h-full shadow-md'}>
@@ -51,9 +52,7 @@ export default function OpinionsCard({opinion, stars}: { opinion: any, stars?: n
                     </div>
 
                     <div className={'flex items-center gap-5'}>
-                        <div className={'bg-[#99B0A7] rounded-full w-20 h-20 relative'}>
-                            <Image src={opinion.srcPhoto} alt={'opiniaTwarz'} fill objectFit={'cover'}/>
-                        </div>
+                        <PhotoImageOpinions urlPhoto={opinion.srcPhoto}/>
                         <p className={'text-lg text-neutral-700 font-medium tracking-wider'}>{opinion.name}</p>
                     </div>
                 </div>

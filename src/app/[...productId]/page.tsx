@@ -8,10 +8,12 @@ import ProductNameAndPrice from "@/sections/SiteProduct/ProductNameAndPrice";
 import InViewApear from "@/components/Animations/InViewApear";
 import GallerySection from "@/sections/SiteProduct/Gallery/GallerySection";
 import {redirect} from "next/navigation";
+import {getProductByIdFirebse} from "@/utils/ProductsRepo";
 
 export default async function ProductDescription({params}: { params: { productId: string } }) {
 
-    const productFull = await getProductById(Number(params.productId[1]));
+    const productFull: Product = await getProductById(Number(params.productId[1]));
+
 
     return (
         <div>
@@ -26,7 +28,7 @@ export default async function ProductDescription({params}: { params: { productId
                                     <TitleProduct title={'Krótki opis:'}/>
                                 </div>
                                 <InViewApear directory={'b'}>
-                                    <ShortDescription></ShortDescription>
+                                    <ShortDescription description={productFull.description}></ShortDescription>
                                 </InViewApear>
                             </div>
                             <div className={'flex flex-row gap-10'}>
@@ -45,11 +47,10 @@ export default async function ProductDescription({params}: { params: { productId
 }
 
 async function getProductById(query: number) {
-    const res = await fetch(`http://localhost:3000/products/getProductById?id=${query}`, {cache: 'no-cache'});
+    const res = await getProductByIdFirebse(query);
 
-    if (res.ok) {
-        const dataJson: Product = await res.json();
-        return dataJson;
+    if (res.length > 0) {
+        return res[0];
     } else {
         redirect('/');
     }

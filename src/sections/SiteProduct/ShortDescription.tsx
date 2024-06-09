@@ -1,15 +1,10 @@
 'use client'
 
 
-export default function ShortDescription() {
+export default function ShortDescription({description} : {description: string}) {
     return (
-        <p className={'font-Jost font-light text-lg tracking-wider select-none'}>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-            dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-            clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
-            consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-            sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
-            sea takimata sanctus est Lorem ipsum dolor sit amet.
+        <p className={'font-Jost font-light text-lg tracking-wider'}>
+            {description}
         </p>
 
     );
